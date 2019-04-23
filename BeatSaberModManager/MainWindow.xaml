@@ -1,0 +1,45 @@
+﻿<Controls:MetroWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:BeatSaberModManager"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Objects="clr-namespace:BeatSaberModManager.Objects" x:Class="BeatSaberModManager.MainWindow"
+        mc:Ignorable="d"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        WindowStartupLocation="CenterScreen"
+        Title="Beat Saber Mod Manager" Height="450" Width="800">
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="settings" />
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconModern Width="24" Height="24" Kind="Cupcake" />
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792">
+            <TabItem Header="Plugins">
+                <Grid Background="Transparent">
+                    <DataGrid x:Name="MainDataGrid" CanUserAddRows="False">
+                        <DataGrid.DataContext>
+                            <Objects:Plugin/>
+                        </DataGrid.DataContext>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Help">
+                <Grid Background="Transparent"/>
+            </TabItem>
+            <TabItem Header="Options">
+                <Grid Background="Transparent"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Controls:MetroWindow>
